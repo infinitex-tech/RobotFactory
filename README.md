@@ -1,5 +1,20 @@
 # Robot Factory - Live Demo
 
+### Setup environment (for Mac OS)
+
+  * Clone EOSIO repo recursively
+
+```
+git clone https://github.com/eosio/eos --recursive
+```
+
+  * Go to the eos folder and run the eosio_build.sh script with the following command
+  
+```
+sh ./eosio_build.sh darwin
+```
+
+*Note: It could take quite some time before all the dependencies are installed and then built.*
 
 ### Running local testnet:
 ```
