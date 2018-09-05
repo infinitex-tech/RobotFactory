@@ -7,6 +7,9 @@ namespace Factory {
     using namespace eosio;
     using std::string;
 
+    /**
+     * The RobotFactory class inherits the "contract" smart contract and use its constructor (using contract::contract)
+    */
     class RobotFactory : public contract {
         using contract::contract;
 
