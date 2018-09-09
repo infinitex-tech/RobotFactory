@@ -14,7 +14,10 @@ namespace Factory {
         using contract::contract;
 
         public:
-
+            
+            /**
+             * The "RobotFactory" constructor use the base constructor of "contract" class
+            */
             RobotFactory(account_name self):contract(self) {}
 
             //@abi table robot i64
@@ -27,7 +30,11 @@ namespace Factory {
                 uint32_t manufactured;
 
                 uint64_t primary_key() const { return series_number; }
-
+                
+                /**
+                 * The EOSLIB_SERIALIZE macro provides serialize and deserialize methods so that actions can be passed back 
+                 * and forth between the contracts and the nodeos system
+                */
                 EOSLIB_SERIALIZE(robot, (series_number)(model)(operating_system)(profession)(owner)(manufactured))
             };
 
@@ -46,5 +53,9 @@ namespace Factory {
             void remove(account_name account, uint64_t robotId);
     };
 
+    /**
+     * EOSIO_ABI encapsulate the logic of the apply method. apply is the action handler, it listens to all incoming actions 
+     * and reacts according to the specifications within the function
+    */
     EOSIO_ABI(RobotFactory, (create)(update)(getbyid)(remove));
 }
